@@ -1,10 +1,15 @@
 """Tiny Git helper GUI with pull/push buttons."""
 from pathlib import Path
 import subprocess
+import sys
 import tkinter as tk
 from tkinter import messagebox
 
-REPO_DIR = Path(__file__).resolve().parent
+# Resolve repo root whether running from source or frozen exe.
+if getattr(sys, "frozen", False):
+    REPO_DIR = Path(sys.executable).resolve().parent.parent
+else:
+    REPO_DIR = Path(__file__).resolve().parent
 
 
 def run_git(command: list[str], action: str) -> None:
