@@ -77,7 +77,7 @@ a {
   left: auto;
   right: auto;
   margin: 0 auto;
-  width: 75%;
+  width: 80%;
   min-height: var(--nav-height);
   border-radius: 6px;
   border: 1px solid rgba(212, 175, 55, 0.65);
